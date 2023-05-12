@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.body {
+    margin-left: 90px;
+    margin-top: 40px;
+    font-family: 'Roboto', sans-serif;
+    overflow: auto;
+    transition: .4s ease-in;
+
+}
+
+main{
+    /* padding: 20px; */
+}
+
+.reservas{
+    padding: 20px;
+}
+
+div>.conte{
+    padding: 20px;
+}
+
+header{
+    width: 100%;
+    height: 0px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+
+.menu__side {
+    width: 90px;
+    height: 100%;
+    position: fixed;
+    z-index: 300;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgb(4 43 72 / 75%);
+    box-shadow: 0 8px 32px rgb(2, 4, 24);
+    border-right: 2px solid rgba(255, 255, 255, .09);
+    transition: .4s ease-in-out;
+}
+
+.menu__side.open{
+    width: 280px;
+}
+
+.menu__side .nav-title {
+    color: #dadada;
+    margin: 10px 0 18px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.menu__side .nav-title2 {
+    color: #dadada;
+    margin: 40px 0 18px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.menu__side.open .nav-title {
+    opacity: 1;
+    text-align: left;
+    transition: .4s;
+    transition-delay: .2s;
+}
+.menu__side.open .nav-title2 {
+    opacity: 1;
+    transition: .4s;
+    transition-delay: .2s;
+}
+
+.menu__side nav {
+    padding: 20px;
+    text-align: center;
+}
+
+.menu__side nav .nav-item {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    margin: 5px 0;
+    color: #fff;
+    transition: .3s;
+}
+
+.menu__side nav .nav-item a{
+    color: inherit;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu__side.open nav .nav-item a {
+    opacity: 1;
+    transition: .4s;
+    transition-delay: .2s;
+    justify-content: flex-start;
+}
+
+.menu__side nav .nav-item:hover {
+    background: rgba(255, 255, 255, .1);
+}
+
+.menu__side nav .nav-item i {
+    font-size: 18px;
+    width: 20px;
+}
+
+.menu__side nav .nav-item span {
+    font-size: 16px;
+    margin-left: 25px;
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+
+.menu__side.open nav .nav-item span {
+    opacity: 1;
+    pointer-events: visible;
+    transition: .4s;
+    transition-delay: .2s;
+    display: block;
+}
+
+.menu__side hr {
+    width: 100%;
+    height: 2px;
+    border-radius: 3px;
+    margin: 30px 0 50px;
+    background: rgba(255, 255, 255, .1);
+    opacity: 0;
+}
+
+.menu__side.open hr {
+    height: 2px;
+    opacity: 1;
+    transition: .4s;
+}
+
+.menu__side .toggle {
+    cursor: pointer;
+    position: absolute;
+    color: #fff;
+    top: 45%;
+    right: -20px;
+    font-size: 38px;
+    line-height: 50%;
+    text-align: center;
+    border-radius: 50%;
+    padding: 2px 0 2px 2px;
+    background: linear-gradient(
+        90deg,
+        transparent 50%,
+        rgba(4, 43, 72, .65) 50%
+    );
+    transition: .3s;
+}
+
+.menu__side.open .toggle {
+    transform: translateY(0px);
+}
+
+.menu__side .toggle i {
+    transition: .4s linear;
+}
+
+.menu__side.open .toggle i {
+    transform: rotateY(180deg);
+}
+
+.down{
+    display: block;
+    margin: -40px 0px 0px 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+nav ul, nav li {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.body_move{
+    margin-left: 280px;
+    transition: .4s ease-in-out;
+}
+
+.scrollbar{
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+@media screen and (max-height: 670px){
+    .scrollbar{
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+}
+
+@media screen and (max-width: 760px){
+    .body_move{
+        margin-left: 100px;
+    }
+
+    .body{
+        margin-left: 100px;
+    }
+
+    .menu__side{
+        width: 80px;
+        left: -80px;
+    }
+
+    .menu__side.open{
+        transform: translateX(80px);
+        width: 98%;
+    }
+
+
+}
